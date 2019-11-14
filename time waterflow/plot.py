@@ -22,6 +22,23 @@ for s in range(15):
     plt.show()
 
 for s in range(15):
+    filename = 'malePT_con_of_' + solute[s] + '_in_LIS.txt'
+    cell = np.zeros(N * Ncell).reshape(Ncell, N)
+    cell=np.loadtxt(filename)
+    plt.figure()
+    plt.plot(cell[1], label="cell 1")
+    plt.plot(cell[50], label="cell 50")
+    plt.plot(cell[100], label="cell 100")
+    plt.plot(cell[150], label="cell 150")
+    plt.plot(cell[200], label="cell 200")
+    plt.title('LIS ' + solute[s] + ' concentration')
+    plt.legend(loc="upper left")
+    plt.xlabel("time")
+    plt.ylabel("conc")
+    plt.savefig('plot figure\LIS concentration\conc of ' + solute[s] + ' in LIS')
+    plt.show()
+
+for s in range(15):
     filename = 'malePT_con_of_' + solute[s] + '_in_lumen.txt'
     cell = np.zeros(N * Ncell).reshape(Ncell, N)
     cell = np.loadtxt(filename)
@@ -39,8 +56,14 @@ for s in range(15):
     plt.show()
 ###################### osmolality
 filename ='malePT_osmolality_in_Cell.txt'
+file='malePT_volume_of_cell.txt'
+volref=10
 cell = np.zeros(N * Ncell).reshape(Ncell, N)
+vol=np.loadtxt(file)
 cell=np.loadtxt(filename)
+for i in range(Ncell):
+    for j in range(N):
+        cell[i][j]=cell[i][j]+60*volref/vol[i][j]
 plt.figure()
 plt.plot(cell[1], label="cell 1")
 plt.plot(cell[50], label="cell 50")
@@ -203,6 +226,22 @@ plt.xlabel("time")
 plt.ylabel("cellular vol")
 plt.savefig('plot figure\cellular volume')
 plt.show()
+##############LIS volume
+file = open('malePT_volume_of_LIS.txt', 'r')
+cell = np.zeros(N * Ncell).reshape(Ncell, N)
+cell=np.loadtxt(file)
+plt.figure()
+plt.plot(cell[1], label="cell 1")
+plt.plot(cell[50], label="cell 50")
+plt.plot(cell[100], label="cell 100")
+plt.plot(cell[150], label="cell 150")
+plt.plot(cell[200], label="cell 200")
+plt.title('LIS volume')
+plt.legend(loc="upper left")
+plt.xlabel("time")
+plt.ylabel("LIS vol")
+plt.savefig('plot figure\LIS volume')
+plt.show()
 ###################### flux
 for s in range(15):
     filename = 'malePT_flux_of_' + solute[s] + '_lumen_cell.txt'
@@ -274,55 +313,76 @@ for s in range(15):
     plt.ylabel("solute amount")
     plt.savefig('plot figure\cellular solute\ ' + solute[s] + ' whole')
     plt.show()
-
+#####################LIS amount
+for s in range(15):
+    file1 = 'malePT_volume_of_LIS.txt'
+    file2 = 'malePT_con_of_' + solute[s] + '_in_LIS.txt'
+    cell = np.zeros(N * Ncell).reshape(Ncell, N)
+    cell1=np.loadtxt(file1)
+    cell2=np.loadtxt(file2)
+    for i in range(Ncell):
+        for j in range(N):
+            cell[i][j] = cell1[i][j]*cell2[i][j]
+    plt.figure()
+    plt.plot(cell[1], label="cell 1")
+    plt.plot(cell[50], label="cell 50")
+    plt.plot(cell[100], label="cell 100")
+    plt.plot(cell[150], label="cell 150")
+    plt.plot(cell[200], label="cell 200")
+    plt.title('LIS ' + solute[s] + ' whole')
+    plt.legend(loc="upper left")
+    plt.xlabel("time")
+    plt.ylabel("LIS amount")
+    plt.savefig('plot figure\LIS solute\ ' + solute[s] + ' whole')
+    plt.show()
 ###################### water flux
-    file = 'malePT_flux_of_water_cell_bath.txt'
-    cell = np.zeros(N * Ncell).reshape(Ncell, N)
-    cell=np.loadtxt(file)
-    plt.figure()
-    plt.plot(cell[1], label="cell 1")
-    plt.plot(cell[50], label="cell 50")
-    plt.plot(cell[100], label="cell 100")
-    plt.plot(cell[150], label="cell 150")
-    plt.plot(cell[200], label="cell 200")
-    plt.title('water flux cell-bath')
-    plt.legend(loc="upper left")
-    plt.xlabel("time")
-    plt.ylabel("flux")
-    plt.savefig('plot figure\Flux cell bath\water flux')
-    plt.show()
+file = 'malePT_flux_of_water_cell_bath.txt'
+cell = np.zeros(N * Ncell).reshape(Ncell, N)
+cell=np.loadtxt(file)
+plt.figure()
+plt.plot(cell[1], label="cell 1")
+plt.plot(cell[50], label="cell 50")
+plt.plot(cell[100], label="cell 100")
+plt.plot(cell[150], label="cell 150")
+plt.plot(cell[200], label="cell 200")
+plt.title('water flux cell-bath')
+plt.legend(loc="upper left")
+plt.xlabel("time")
+plt.ylabel("flux")
+plt.savefig('plot figure\Flux cell bath\water flux')
+plt.show()
 
-    file = 'malePT_flux_of_water_cell_LIS.txt'
-    cell = np.zeros(N * Ncell).reshape(Ncell, N)
-    cell=np.loadtxt(file)
-    plt.figure()
-    plt.plot(cell[1], label="cell 1")
-    plt.plot(cell[50], label="cell 50")
-    plt.plot(cell[100], label="cell 100")
-    plt.plot(cell[150], label="cell 150")
-    plt.plot(cell[200], label="cell 200")
-    plt.title('water flux cell-LIS')
-    plt.legend(loc="upper left")
-    plt.xlabel("time")
-    plt.ylabel("flux")
-    plt.savefig('plot figure\Flux cell LIS\water flux')
-    plt.show()
+file = 'malePT_flux_of_water_cell_LIS.txt'
+cell = np.zeros(N * Ncell).reshape(Ncell, N)
+cell=np.loadtxt(file)
+plt.figure()
+plt.plot(cell[1], label="cell 1")
+plt.plot(cell[50], label="cell 50")
+plt.plot(cell[100], label="cell 100")
+plt.plot(cell[150], label="cell 150")
+plt.plot(cell[200], label="cell 200")
+plt.title('water flux cell-LIS')
+plt.legend(loc="upper left")
+plt.xlabel("time")
+plt.ylabel("flux")
+plt.savefig('plot figure\Flux cell LIS\water flux')
+plt.show()
 
-    file = 'malePT_flux_of_water_lumen_cell.txt'
-    cell = np.zeros(N * Ncell).reshape(Ncell, N)
-    cell=np.loadtxt(file)
-    plt.figure()
-    plt.plot(cell[1], label="cell 1")
-    plt.plot(cell[50], label="cell 50")
-    plt.plot(cell[100], label="cell 100")
-    plt.plot(cell[150], label="cell 150")
-    plt.plot(cell[200], label="cell 200")
-    plt.title('water flux lumen-cell')
-    plt.legend(loc="upper left")
-    plt.xlabel("time")
-    plt.ylabel("flux")
-    plt.savefig('plot figure\Flux lumen cell\water flux')
-    plt.show()
+file = 'malePT_flux_of_water_lumen_cell.txt'
+cell = np.zeros(N * Ncell).reshape(Ncell, N)
+cell=np.loadtxt(file)
+plt.figure()
+plt.plot(cell[1], label="cell 1")
+plt.plot(cell[50], label="cell 50")
+plt.plot(cell[100], label="cell 100")
+plt.plot(cell[150], label="cell 150")
+plt.plot(cell[200], label="cell 200")
+plt.title('water flux lumen-cell')
+plt.legend(loc="upper left")
+plt.xlabel("time")
+plt.ylabel("flux")
+plt.savefig('plot figure\Flux lumen cell\water flux')
+plt.show()
 
 ###################### solute difference
 for s in range(15):
