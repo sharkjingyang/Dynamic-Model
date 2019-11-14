@@ -81,41 +81,80 @@ for n in range(NS):
     file.close()
 
 for n in range(NS):
-    file = open(cell[0][0].sex + cell[0][0].segment + '_pressure' + '_in_cell.txt', 'w')
+    file = open(cell[0][0].sex + cell[0][0].segment + '_con_of_' + solute[n] + '_in_LIS.txt', 'w')
     for i in range(Ncell):
 
         for j in range(N):
-            file.write(str(cell[i][j].pres[1]) + ' ')
+            file.write(str(cell[i][j].conc[n, 4]) + ' ')
         file.write('\n')
     file.close()
 
-for n in range(NS):
-    file = open(cell[0][0].sex + cell[0][0].segment + '_pressure' + '_in_lumen.txt', 'w')
-    for i in range(Ncell):
 
-        for j in range(N):
-            file.write(str(cell[i][j].pres[0]) + ' ')
-        file.write('\n')
-    file.close()
+file = open(cell[0][0].sex + cell[0][0].segment + '_pressure' + '_in_cell.txt', 'w')
+for i in range(Ncell):
+    for j in range(N):
+        file.write(str(cell[i][j].pres[1]) + ' ')
+    file.write('\n')
+file.close()
+
+
+file = open(cell[0][0].sex + cell[0][0].segment + '_pressure' + '_in_lumen.txt', 'w')
+for i in range(Ncell):
+    for j in range(N):
+        file.write(str(cell[i][j].pres[0]) + ' ')
+    file.write('\n')
+file.close()
+
+file = open(cell[0][0].sex + cell[0][0].segment + '_pressure' + '_in_LIS.txt', 'w')
+for i in range(Ncell):
+    for j in range(N):
+        file.write(str(cell[i][j].pres[4]) + ' ')
+    file.write('\n')
+file.close()
+
+file = open(cell[0][0].sex + cell[0][0].segment + '_ep' + '_in_cell.txt', 'w')
+for i in range(Ncell):
+    for j in range(N):
+        file.write(str(cell[i][j].ep[1]) + ' ')
+    file.write('\n')
+file.close()
+
+file = open(cell[0][0].sex + cell[0][0].segment + '_ep' + '_in_lumen.txt', 'w')
+for i in range(Ncell):
+    for j in range(N):
+        file.write(str(cell[i][j].ep[0]) + ' ')
+    file.write('\n')
+file.close()
+
+file = open(cell[0][0].sex + cell[0][0].segment + '_ep' + '_in_LIS.txt', 'w')
+for i in range(Ncell):
+    for j in range(N):
+        file.write(str(cell[i][j].ep[4]) + ' ')
+    file.write('\n')
+file.close()
 
 file_cell = open(cell[0][0].sex + cell[0][0].segment + '_osmolality_in_Cell.txt', 'w')
 file_lumen = open(cell[0][0].sex + cell[0][0].segment + '_osmolality_in_Lumen.txt', 'w')
+file_LIS = open(cell[0][0].sex + cell[0][0].segment + '_osmolality_in_LIS.txt', 'w')
 for i in range(Ncell):
 
     for j in range(N):
         osm_l = 0
         osm_c = 0
-
+        osm_LIS=0
         for n in range(NS):
             osm_l = osm_l + cell[i][j].conc[n, 0]
             osm_c = osm_c + cell[i][j].conc[n, 1]
-
+            osm_LIS = osm_LIS + cell[i][j].conc[n, 4]
         file_lumen.write(str(osm_l) + ' ')
         file_cell.write(str(osm_c) + ' ')
+        file_LIS.write(str(osm_LIS) + ' ')
     file_lumen.write('\n')
     file_cell.write('\n')
+    file_LIS.write('\n')
 file_lumen.close()
 file_cell.close()
+file_LIS.close()
 
 file = open(cell[0][0].sex + cell[0][0].segment + '_waterflow' + '_in_lumen.txt', 'w')
 for i in range(Ncell):
@@ -133,6 +172,14 @@ for i in range(Ncell):
     file.write('\n')
 file.close()
 
+file = open(cell[0][0].sex + cell[0][0].segment + '_volume' + '_of_LIS.txt', 'w')
+for i in range(Ncell):
+
+    for j in range(N):
+        file.write(str(cell[i][j].vol[4]) + ' ')
+    file.write('\n')
+file.close()
+
 for n in range(NS):
     filename1 = 'malePT_flux_of_' + solute[n] + '_lumen_cell.txt'
     file1 = open(filename1, 'w')
@@ -146,6 +193,10 @@ for n in range(NS):
     file5 = open(filename5, 'w')
     filename6 = 'malePT_flux_of_water_cell_LIS.txt'
     file6 = open(filename6, 'w')
+    filename7 = 'malePT_flux_of_' + solute[n] + '_lumen_LIS.txt'
+    file7 = open(filename7, 'w')
+    filename8 = 'malePT_flux_of_water_lumen_LIS.txt'
+    file8 = open(filename8, 'w')
     for i in range(Ncell):
         for j in range(N):
             Jvol1, Jsol1 = flux.compute_fluxes(cell[i][j], i)
@@ -155,18 +206,24 @@ for n in range(NS):
             file4.write(str(Jvol1[1][5]) + ' ')
             file5.write(str(Jsol1[n][1][4]) + ' ')
             file6.write(str(Jvol1[1][4]) + ' ')
+            file7.write(str(Jsol1[n][0][4]) + ' ')
+            file8.write(str(Jvol1[0][4]) + ' ')
         file1.write('\n')
         file2.write('\n')
         file3.write('\n')
         file4.write('\n')
         file5.write('\n')
         file6.write('\n')
+        file7.write('\n')
+        file8.write('\n')
     file1.close
     file2.close
     file3.close
     file4.close
     file5.close
     file6.close
+    file7.close
+    file8.close
 for i in range(Ncell):
     for j in range(N):
         cell[i][j].area[4][5] = 0.02 * max(cell[i][j].vol[4] / cell[i][j].volref[4], 1.0)
@@ -293,6 +350,7 @@ for i in range(Ncell):
                     file.write(str(fluxs[k]) + '\n')
             else:
                 print('What is this?', transporter_type)
+
 
 
 for i in range(Ncell):
