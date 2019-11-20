@@ -903,7 +903,7 @@ for s in range(15):
             cell[i][j] = cell1[i][j]*cell2[i][j]
     frac=np.zeros(N)
     for i in range(N):
-        frac[i]=cell[200][i]/cell[0][i]*100
+        frac[i]=(1-cell[200][i]/cell[0][i])*100
     plt.figure()
     plt.plot(frac, label="reabsorb frac")
     plt.title('lumen' + solute[s] + ' reabsorb frac')
@@ -919,7 +919,7 @@ cell = np.zeros(N * Ncell).reshape(Ncell, N)
 cell=np.loadtxt(file)
 frac=np.zeros(N)
 for i in range(N):
-    frac[i]=cell[200][i]/cell[0][i]*100
+    frac[i]=(1-cell[200][i]/cell[0][i])*100
 plt.figure()
 plt.plot(frac, label="reabsorb frac")
 plt.title('lumen water reabsorb frac')
