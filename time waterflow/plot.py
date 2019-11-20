@@ -940,12 +940,12 @@ for s in range(15):
             cell[i][j] = cell1[i][j]*cell2[i][j]
     frac=np.zeros(Ncell)
     for i in range(Ncell):
-        frac[i]=cell[i][7]/cell[0][7]*100
+        frac[i]=(1-cell[i][7]/cell[0][7])*100
     plt.figure()
     plt.plot(frac, label="reabsorb frac")
     plt.title('lumen' + solute[s] + ' reabsorb frac')
     plt.legend(loc="upper left")
-    plt.xlabel("time")
+    plt.xlabel("cell")
     plt.ylabel("percent")
     plt.savefig('plot figure\lumen reabsorb frac\cells peak\lumen frac of ' + solute[s] )
     plt.show()
@@ -955,12 +955,12 @@ cell = np.zeros(N * Ncell).reshape(Ncell, N)
 cell=np.loadtxt(file)
 frac=np.zeros(Ncell)
 for i in range(Ncell):
-    frac[i]=cell[i][7]/cell[0][7]*100
+    frac[i]=(1-cell[i][7]/cell[0][7])*100
 plt.figure()
 plt.plot(frac, label="reabsorb frac")
 plt.title('lumen water reabsorb frac')
 plt.legend(loc="upper left")
-plt.xlabel("time")
+plt.xlabel("cell")
 plt.ylabel("percent")
 plt.savefig('plot figure\lumen reabsorb frac\cells peak\lumen frac of water' )
 plt.show()
@@ -976,12 +976,12 @@ for s in range(15):
             cell[i][j] = cell1[i][j]*cell2[i][j]
     frac=np.zeros(Ncell)
     for i in range(Ncell):
-        frac[i]=cell[i][22]/cell[0][22]*100
+        frac[i]=(1-cell[i][22]/cell[0][22])*100
     plt.figure()
     plt.plot(frac, label="reabsorb frac")
     plt.title('lumen' + solute[s] + ' reabsorb frac')
     plt.legend(loc="upper left")
-    plt.xlabel("time")
+    plt.xlabel("cell")
     plt.ylabel("percent")
     plt.savefig('plot figure\lumen reabsorb frac\cells bottom\lumen frac of ' + solute[s] )
     plt.show()
@@ -991,12 +991,12 @@ cell = np.zeros(N * Ncell).reshape(Ncell, N)
 cell=np.loadtxt(file)
 frac=np.zeros(Ncell)
 for i in range(Ncell):
-    frac[i]=cell[i][22]/cell[0][22]*100
+    frac[i]=(1-cell[i][22]/cell[0][22])*100
 plt.figure()
 plt.plot(frac, label="reabsorb frac")
 plt.title('lumen water reabsorb frac')
 plt.legend(loc="upper left")
-plt.xlabel("time")
+plt.xlabel("cell")
 plt.ylabel("percent")
 plt.savefig('plot figure\lumen reabsorb frac\cells bottom\lumen frac of water' )
 plt.show()
