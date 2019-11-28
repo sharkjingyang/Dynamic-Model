@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+cell=np.loadtxt('data.txt').reshape(5,200)
+plt.figure()
+plt.plot(cell[0], label="SNGFR 1")
+plt.plot(cell[1], label="SNGFR 1.03")
+plt.plot(cell[2], label="SNGFR 1.06")
+plt.plot(cell[3], label="SNGFR 1.1")
+plt.plot(cell[4], label="SNGFR 1.15")
+plt.title('steady state cellular K concentration without different SNGFR')
+plt.legend(loc="upper left")
+plt.xlabel("cell")
+plt.ylabel("conc")
+plt.savefig('different SNGFR K in cell')
+plt.show()
