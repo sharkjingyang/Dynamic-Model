@@ -168,47 +168,34 @@ for s in range(15):
     plt.savefig('plot figure\lumen flow\ ' + solute[s] + ' flow')
     plt.show()
 
-# for s in range(15):
-#     filename = 'malePT_con_of_' + solute[s] + '_in_cell.txt'
-#     file = open(filename, 'r')
-#     cell = np.zeros(N * Ncell).reshape(Ncell, N)
-#     for i in range(Ncell):
-#         line = file.readline()
-#         terms = line.split(',')
-#         for j in range(N):
-#             cell[i][j] = terms[j]
-#     file.close
-#     plt.figure()
-#     plt.plot(cell[:, 1], label="time 1")
-#     plt.plot(cell[:, 25], label="time 25")
-#     plt.plot(cell[:, 50], label="time 50")
-#     plt.plot(cell[:, 75], label="time 75")
-#     plt.plot(cell[:, 100], label="time 100")
-#     plt.title('cellular' + solute[s] + ' concentration')
-#     plt.legend(loc="upper left")
-#     plt.savefig('plot figure\cuttime\ ' + solute[s] + ' in cell.jpg')
-#     plt.show()
-#
-# for s in range(15):
-#     filename = 'malePT_con_of_' + solute[s] + '_in_lumen.txt'
-#     file = open(filename, 'r')
-#     cell = np.zeros(N * Ncell).reshape(Ncell, N)
-#     for i in range(Ncell):
-#         line = file.readline()
-#         terms = line.split(',')
-#         for j in range(N):
-#             cell[i][j] = terms[j]
-#     file.close
-#     plt.figure()
-#     plt.plot(cell[:, 1], label="time 1")
-#     plt.plot(cell[:, 25], label="time 25")
-#     plt.plot(cell[:, 50], label="time 50")
-#     plt.plot(cell[:, 75], label="time 75")
-#     plt.plot(cell[:, 100], label="time 100")
-#     plt.title('lumen' + solute[s] + ' concentration')
-#     plt.legend(loc="upper left")
-#     plt.savefig('plot figure\cuttime\ ' + solute[s] + ' in lumen.jpg')
-#     plt.show()
+
+for s in range(15):
+    filename = 'malePT_con_of_' + solute[s] + '_in_lumen.txt'
+    cell = np.loadtxt(filename).reshape(Ncell, N)
+    plt.figure()
+    plt.plot(cell[:, 0], label="time 0")
+    plt.plot(cell[:,2], label="time 2")
+    plt.plot(cell[:, 4], label="time 4")
+    plt.plot(cell[:, 6], label="time 6")
+    plt.plot(cell[:, 8], label="time 8")
+    plt.title('lumen' + solute[s] + ' concentration')
+    plt.legend(loc="upper left")
+    plt.savefig('plot figure\cuttime\ ' + solute[s] + ' in lumen')
+    plt.show()
+
+for s in range(15):
+    filename = 'malePT_con_of_' + solute[s] + '_in_cell.txt'
+    cell = np.loadtxt(filename).reshape(Ncell, N)
+    plt.figure()
+    plt.plot(cell[:, 0], label="time 0")
+    plt.plot(cell[:, 2], label="time 2")
+    plt.plot(cell[:, 4], label="time 4")
+    plt.plot(cell[:, 6], label="time 6")
+    plt.plot(cell[:, 8], label="time 8")
+    plt.title('cell' + solute[s] + ' concentration')
+    plt.legend(loc="upper left")
+    plt.savefig('plot figure\cuttime\ ' + solute[s] + ' in cell')
+    plt.show()
 
 ###################### cellular volume
 file = open('malePT_volume_of_cell.txt', 'r')
@@ -291,6 +278,29 @@ for s in range(15):
     plt.savefig('plot figure\Flux cell LIS\ ' + solute[s] + ' flux_cell_LIS')
     plt.show()
 
+for s in range(15):
+    filename1 = 'malePT_flux_of_' + solute[s] + '_cell_LIS.txt'
+    filename2 = 'malePT_flux_of_' + solute[s] + '_cell_bath.txt'
+    filename3 = 'malePT_flux_of_' + solute[s] + '_lumen_cell.txt'
+    cell1 = np.loadtxt(filename1)
+    cell2 = np.loadtxt(filename2)
+    cell3 = np.loadtxt(filename3)
+    cell = np.zeros(N * Ncell).reshape(Ncell, N)
+    for i in range(Ncell):
+        for j in range(N):
+            cell[i][j]=-cell1[i][j]-cell2[i][j]+cell3[i][j]
+    plt.figure()
+    plt.plot(cell[1], label="cell 1")
+    plt.plot(cell[50], label="cell 50")
+    plt.plot(cell[100], label="cell 100")
+    plt.plot(cell[150], label="cell 150")
+    plt.plot(cell[200], label="cell 200")
+    plt.title('flux of ' + solute[s] + 'in cell whole')
+    plt.legend(loc="upper left")
+    plt.xlabel("time")
+    plt.ylabel("flux")
+    plt.savefig('plot figure\Flux whole\ ' + solute[s] + ' flux_whole_in_cell')
+    plt.show()
 ###################### cellular solute amount
 for s in range(15):
     file1 = 'malePT_volume_of_cell.txt'
@@ -384,6 +394,29 @@ plt.ylabel("flux")
 plt.savefig('plot figure\Flux lumen cell\water flux')
 plt.show()
 
+
+filename1 = 'malePT_flux_of_water_cell_LIS.txt'
+filename2 = 'malePT_flux_of_water_cell_bath.txt'
+filename3 = 'malePT_flux_of_water_lumen_cell.txt'
+cell1=np.loadtxt(filename1)
+cell2 = np.loadtxt(filename2)
+cell3 = np.loadtxt(filename3)
+plt.figure()
+plt.plot(cell[1], label="cell 1")
+plt.plot(cell[50], label="cell 50")
+plt.plot(cell[100], label="cell 100")
+plt.plot(cell[150], label="cell 150")
+plt.plot(cell[200], label="cell 200")
+cell = np.zeros(N * Ncell).reshape(Ncell, N)
+for i in range(Ncell):
+    for j in range(N):
+        cell[i][j] = -cell1[i][j] - cell2[i][j] + cell3[i][j]
+plt.title('flux of water in cell whole')
+plt.legend(loc="upper left")
+plt.xlabel("time")
+plt.ylabel("flux")
+plt.savefig('plot figure\Flux whole\water_flux_whole_in_cell')
+plt.show()
 ###################### solute difference
 for s in range(15):
     file1 = 'malePT_con_of_' + solute[s] + '_in_cell.txt'
