@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2c06d23c-b756-4551-aeaa-09ee4fafd647" name="Default Changelist" comment="plot new" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Waterloo\Test case\time waterflow Broyden\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1QyWndLkkuzCOf2yo8vcTtc0NDc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plot figure" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.computation">
+    <configuration name="calculate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nephron_code_version_1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="computation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nephron_code_version_1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/computation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="driver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nephron_code_version_1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/driver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nephron_code_version_1.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.calculate" />
+      <item itemvalue="Python.computation" />
+      <item itemvalue="Python.driver" />
+      <item itemvalue="Python.plot" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.computation" />
+        <item itemvalue="Python.plot" />
+        <item itemvalue="Python.calculate" />
+        <item itemvalue="Python.driver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c06d23c-b756-4551-aeaa-09ee4fafd647" name="Default Changelist" comment="" />
+      <created>1568743484181</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568743484181</updated>
+      <workItem from="1568743485643" duration="756000" />
+      <workItem from="1568745205265" duration="498000" />
+      <workItem from="1568745733804" duration="2879000" />
+      <workItem from="1568816597019" duration="426000" />
+      <workItem from="1568851415155" duration="66000" />
+      <workItem from="1568902460225" duration="3000" />
+      <workItem from="1568902475288" duration="941000" />
+      <workItem from="1568907711807" duration="3471000" />
+      <workItem from="1568927768455" duration="2721000" />
+      <workItem from="1568991228259" duration="6208000" />
+      <workItem from="1569094370425" duration="5759000" />
+      <workItem from="1569120733566" duration="36289000" />
+      <workItem from="1569331665378" duration="11183000" />
+      <workItem from="1569349290649" duration="597000" />
+      <workItem from="1569416151232" duration="2179000" />
+      <workItem from="1569426300368" duration="3191000" />
+      <workItem from="1569439640390" duration="3400000" />
+      <workItem from="1569517360948" duration="1799000" />
+      <workItem from="1569592917151" duration="3132000" />
+      <workItem from="1569596770635" duration="887000" />
+      <workItem from="1569938740537" duration="7825000" />
+      <workItem from="1570022575565" duration="6332000" />
+      <workItem from="1570038586290" duration="8823000" />
+      <workItem from="1570478927467" duration="852000" />
+      <workItem from="1570479818001" duration="1675000" />
+      <workItem from="1570486156475" duration="3821000" />
+      <workItem from="1570541943373" duration="8330000" />
+      <workItem from="1570642947206" duration="7415000" />
+      <workItem from="1570715664329" duration="10176000" />
+      <workItem from="1570731042252" duration="5921000" />
+      <workItem from="1570802980368" duration="17000" />
+      <workItem from="1570803098758" duration="2406000" />
+      <workItem from="1571071299876" duration="7295000" />
+      <workItem from="1571160435477" duration="584000" />
+      <workItem from="1571279645144" duration="2805000" />
+      <workItem from="1572455047167" duration="8278000" />
+      <workItem from="1572484829871" duration="2230000" />
+      <workItem from="1572493392597" duration="970000" />
+      <workItem from="1572533056643" duration="2364000" />
+      <workItem from="1572795295805" duration="71000" />
+      <workItem from="1572795546194" duration="1988000" />
+      <workItem from="1572967888293" duration="3711000" />
+      <workItem from="1573228486322" duration="6530000" />
+      <workItem from="1573441116645" duration="753000" />
+      <workItem from="1573442201698" duration="4273000" />
+      <workItem from="1573483585489" duration="2237000" />
+      <workItem from="1573486359406" duration="18153000" />
+      <workItem from="1573534883122" duration="119000" />
+      <workItem from="1573535038282" duration="1075000" />
+      <workItem from="1573568797984" duration="1286000" />
+      <workItem from="1573581211678" duration="3035000" />
+      <workItem from="1573673129267" duration="1842000" />
+      <workItem from="1573743194708" duration="5608000" />
+      <workItem from="1574275225504" duration="80000" />
+      <workItem from="1574275418350" duration="4933000" />
+      <workItem from="1574643462453" duration="7000" />
+      <workItem from="1574900384546" duration="109000" />
+      <workItem from="1574900673673" duration="178000" />
+      <workItem from="1574962848819" duration="3080000" />
+      <workItem from="1575399881876" duration="1772000" />
+      <workItem from="1575417757784" duration="65000" />
+      <workItem from="1575417855979" duration="104000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/time_waterflow_Broyden$plot.coverage" NAME="plot Coverage Results" MODIFIED="1573582604436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_first_cells$computation.coverage" NAME="computation Coverage Results" MODIFIED="1569115547869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/time_waterflow$plot.coverage" NAME="plot Coverage Results" MODIFIED="1574963750257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nephron_code_version_1_1$computation.coverage" NAME="computation Coverage Results" MODIFIED="1568816998913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/time_waterflow_Broyden$computation.coverage" NAME="computation Coverage Results" MODIFIED="1573507650919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/steady_tubal$computation.coverage" NAME="computation Coverage Results" MODIFIED="1568915608315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_tubal_volume_change$computation.coverage" NAME="computation Coverage Results" MODIFIED="1570721628853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/time_waterflow$computation.coverage" NAME="computation Coverage Results" MODIFIED="1573673854895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_first_cells$plot.coverage" NAME="plot Coverage Results" MODIFIED="1569002849867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_tubal$computation.coverage" NAME="computation Coverage Results" MODIFIED="1570479720833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_tubal$plot.coverage" NAME="plot Coverage Results" MODIFIED="1570117059516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nephron_code_version_1_1$driver.coverage" NAME="driver Coverage Results" MODIFIED="1568746053059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_tubal_volume_change$plot.coverage" NAME="plot Coverage Results" MODIFIED="1570727664172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/time_waterflow_1_3osc$computation.coverage" NAME="computation Coverage Results" MODIFIED="1575401179471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_first_cells$driver.coverage" NAME="driver Coverage Results" MODIFIED="1569002582199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dynamic_tubal_volume_change$calculate.coverage" NAME="calculate Coverage Results" MODIFIED="1570718500719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
