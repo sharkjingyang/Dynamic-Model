@@ -301,6 +301,28 @@ for s in range(15):
     plt.ylabel("flux")
     plt.savefig('plot figure\Flux whole\ ' + solute[s] + ' flux_whole_in_cell')
     plt.show()
+
+for s in range(15):
+    filename1 = 'malePT_flux_of_' + solute[s] + '_lumen_cell.txt'
+    filename2 = 'malePT_flux_of_' + solute[s] + '_lumen_LIS.txt'
+    cell1 = np.loadtxt(filename1)
+    cell2 = np.loadtxt(filename2)
+    cell = np.zeros(N * Ncell).reshape(Ncell, N)
+    for i in range(Ncell):
+        for j in range(N):
+            cell[i][j]=-cell1[i][j]-cell2[i][j]
+    plt.figure()
+    plt.plot(cell[1], label="cell 1")
+    plt.plot(cell[50], label="cell 50")
+    plt.plot(cell[100], label="cell 100")
+    plt.plot(cell[150], label="cell 150")
+    plt.plot(cell[200], label="cell 200")
+    plt.title('flux of ' + solute[s] + 'in lumen whole')
+    plt.legend(loc="upper left")
+    plt.xlabel("time")
+    plt.ylabel("flux")
+    plt.savefig('plot figure\Flux whole\ ' + solute[s] + ' flux_whole_in_lumen')
+    plt.show()
 ###################### cellular solute amount
 for s in range(15):
     file1 = 'malePT_volume_of_cell.txt'
