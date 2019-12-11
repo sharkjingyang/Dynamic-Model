@@ -6,6 +6,7 @@
 
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 
 \begin{document}
@@ -13,7 +14,7 @@
 \maketitle
 
 \begin{abstract}
-We developed a dynamic model of a male rat proximal tubule in order to investigate results brought by changes on different lumen boundary conditions. We examined how long it will take to reach a steady state again from a sudden change. We also investigated whether oscillation on a single parameter will result in similar oscillations on other parameters. We also determined that these oscillations will not have a significant passive effect on proximal tubule's re-absorption. We also noticed several irregular phenomenon such as phase difference and amplitude difference on the oscillation pattern of concentrations in different part along the tubule. And we tried to explain these response by using physiological knowledge.\\
+We developed a dynamic model of a male rat proximal tubule in order to investigate results brought by changes on different lumen boundary conditions. We examined how long it will take to reach a steady state again from a sudden change. We also investigated whether oscillation on a single parameter will result in similar oscillations on other parameters. We determined that these oscillations will not have a significant passive effect on proximal tubule's re-absorption. We also noticed several irregular phenomenon such as phase difference and amplitude difference on the oscillation pattern of concentrations in different part along the tubule. And we tried to explain these response by using physiological knowledge.\\
 
 \noindent \textbf{Keywords: }Proximal tubule $\cdot$ Oscillations $\cdot$ Concentrations $\cdot$ Dynamic model
 \end{abstract}
@@ -22,8 +23,8 @@ We developed a dynamic model of a male rat proximal tubule in order to investiga
 \section{Model Formulation}
 In proximal tubule, cells and tight junctions between cells form a single-layer cell wall between lumen and bath. We build our model based on the steady state model that Anita Layton published. The model consider fifteen kinds of solutes, including $\rm {Na}^{+}$,$\rm {K}^{+}$,$\rm {Cl}^{-}$,$\rm {HCO}_{3}^{-}$,$\rm H_{2}CO_{3}$,$\rm CO_{2}$,$\rm HPO_{4}^{2-}$,$\rm H_{2}PO_{4}^{-}$,urea,$\rm NH_{3}$,$\rm NH_{4}^{+}$,$\rm H^{+}$,\\$\rm HCO_{2}^{-}$,$\rm H_{2}CO_2$ and glucose. Model contains four compartments (Lumen, cell, lateral space, bath).Solutes are exchanged between different compartments through diffusion, transporters and coupled transporters. System equations are based on mass conservation and electronic neutrality. 
 
-\subsection{System Equations}
-\subsubsection{Water Conservation}
+
+\subsection{Water Conservation}
 Water conservation in cell and lateral space (denoted by subscripts ``C'' and ``P'' respectively) is given by:\\
 \begin{equation}
 \frac{\mathrm{d} V_{\mathrm{C}}}{\mathrm{d} t}=J_{v, \mathrm{LC}}+J_{v, \mathrm{BC}}+J_{v, \mathrm{PC}}
@@ -37,7 +38,7 @@ where the subscripts ``L'' and ``B'' denote lumen and bath respectively, and ``v
 \end{equation}
 where $\mathrm{F}_{v}$ means water flow in lumen, $r$ means radius of lumen and partial derivative means along the lumen.
 
-\subsubsection{Solute Conservation}
+\subsection{Solute Conservation}
 For non-reacting solute $k$, conservation equations are given by:
 \begin{equation}
 \frac{\mathrm{d} V_{\mathrm{C}} C_{k, \mathrm{C}}}{\mathrm{d} t}=J_{k, \mathrm{LC}}+J_{k, \mathrm{BC}}+J_{k, \mathrm{PC}}
@@ -50,11 +51,42 @@ For non-reacting solute $k$, conservation equations are given by:
 \end{equation}
 where $C_{k,i}$ denotes the concentration of solute $k$ in compartment $i$ and $J_{k,ij}$ denotes flux of solute $k$ from compartment $i$ to $j$.\\
 
-For the reacting solutes, 
+For the reacting solutes, conservation is applied to the total buffers. Take the buffer $\mathrm{HPO}_{4}^{2-} and {H}_{2} \mathrm{PO}_{4}^{-}$ for instance:
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d} t}\left(V_{i}\left(C_{\mathrm{HPO}_{4}^{2-}, i}+C_{\mathrm{H}_{2} \mathrm{PO}_{4}^{-}, i}\right)\right)=\hat{J}_{\mathrm{HPO}_{4}^{2-}, i}+\hat{J}_{\mathrm{H}_{2} \mathrm{PO}_{4}^{-}, i}
+\end{equation}
+where $i$ corresponding to C or P. $\hat{J}_{k, i}$ denotes the net flux of solute k into the compartment i.
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d} t}\left(F_{v}\left(C_{\mathrm{HPO}_{4}^{2-}, L}+C_{\mathrm{H}_{2} \mathrm{PO}_{4}^{-}, L}\right)\right)=\hat{J}_{\mathrm{HPO}_{4}^{2-}, L}+\hat{J}_{\mathrm{H}_{2} \mathrm{PO}_{4}^{-}, L}
+\end{equation}
+The other buffer pairs $\left(\mathrm{CO}_{2},\mathrm{HCO}_{3}^{-}, \mathrm{H}_{2} \mathrm{CO}_{3}\right),\left(\mathrm{HPO}_{4}^{2-}, \mathrm{H}_{2} \mathrm{PO}_{4}^{-}\right),\left(\mathrm{NH}_{3}, \mathrm{NH}_{4}^{+}\right)$ all have above equations.
+The buffer pairs are in equilibrium:
+\begin{equation}
+\mathrm{pH}=\mathrm{pK}_{A}-\log \frac{C_{A, i}}{C_{B, i}}
+\end{equation}
+where the buffer pairs (A,B) are $\left(\mathrm{HCO}_{3}^{-}, \mathrm{H}_{2} \mathrm{CO}_{3}\right),\left(\mathrm{HPO}_{4}^{2-}, \mathrm{H}_{2} \mathrm{PO}_{4}^{-}\right),\left(\mathrm{NH}_{3}, \mathrm{NH}_{4}^{+}\right),\left(\mathrm{HCO}_{2}^{-}, \mathrm{H}_{2} \mathrm{CO}_{2}\right)$.
+The conservation of hydrogen is given by:
+\begin{equation}
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d} t}\left(V_{i} (C_{\mathrm{H}^{+}}+C_{\mathrm{NH}_{4}^{+}}-C_{\mathrm{HCO_{3}^{-}}}-C_{\mathrm{HPO_{4}^{2-}}}-C_{\mathrm{HCO_{2}^{-}}}) \right)\\=\sum (\hat{J}_{H^{+}, i}+\hat{J}_{\mathrm{NH}_{4}^{+}, i}-\hat{J}_{ \mathrm{HCO_{3}^{-}, i}}-\hat{J}_{ \mathrm{HPO_{4}^{2-}, i}}-\hat{J}_{ \mathrm{HCO_{2}^{-}, i}})
+\end{aligned}
+\end{equation}
 
+\subsection{Calculation}
+We discrete time-dependent term by Back-Euler Method. For the partial differential term, we simply regard $F_{v}$ does not change too much along one cell's length along the tubule. For instance, solute conservation equation in lumen can be discrete as following:
+For non-reacting solute $k$, conservation equations are given by:
+\begin{equation}
+\frac{V_{\mathrm{C}}^{n+1} C_{k, \mathrm{C}}^{n+1}-V_{\mathrm{C}}^{n} C_{k, \mathrm{C}}^{n}}{\Delta t}=J_{k, \mathrm{LC}}^{n+1}+J_{k, \mathrm{BC}}^{n+1}+J_{k, \mathrm{PC}}^{n+1}
+\end{equation}
+where ${\Delta t}$ means time step length, superscript $n$ means the n-th time step.
 
+\section{Numerical Experiment}
+After finishing the building of dynamic model, we can do various numerical experiments to observe changes along the time. In general, we did four kinds of changes on boundary conditions separately :
+\begin{itemize}
+	\item 
+\end{itemize}
 
-\section{Conclusion}
+\section{Numerical Experiment}
 ``I always thought something was fundamentally wrong with the universe'' \citep{adams1995hitchhiker}
 
 \bibliographystyle{plain}
