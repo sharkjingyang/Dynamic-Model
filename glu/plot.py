@@ -636,6 +636,23 @@ plt.ylabel("flux")
 plt.savefig('plot figure\Transporter flux\ SGLT2_glu_lumen_cell')
 plt.show()
 
+file = 'male_PT_SGLT2_glu01.txt'
+cell=np.loadtxt(file).reshape(Ncell,N)
+plt.figure()
+plt.plot(cell[1], label="cell 1")
+plt.plot(cell[5], label="cell 5")
+plt.plot(cell[10], label="cell 10")
+plt.plot(cell[15], label="cell 15")
+plt.plot(cell[20], label="cell 20")
+plt.plot(cell[25], label="cell 25")
+plt.plot(cell[30], label="cell 30")
+plt.title('SGLT2_glu_lumen_cell')
+plt.legend(loc="upper left")
+plt.xlabel("time")
+plt.ylabel("flux")
+plt.savefig('plot figure\Transporter flux\ SGLT2_glu_lumen_cell_detail')
+plt.show()
+
 file = 'male_PT_SGLT2_Na01.txt'
 cell=np.loadtxt(file).reshape(Ncell,N)
 plt.figure()
