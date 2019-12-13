@@ -7,6 +7,7 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{float}
 
 
 \begin{document}
@@ -84,14 +85,55 @@ where ${\Delta t}$ means time step length, superscript $n$ means the n-th time s
 After finishing the building of dynamic model, we can do various numerical experiments to observe changes along the time. In general, we did four kinds of experiments on boundary conditions separately :
 \begin{itemize}
 	\item Increase a certain solute concentration level
-	\item Add various frequency and amplitude oscillations on SNGFR 
+	\item Add various frequency and amplitude oscillations on single nephron glomerular filtration rate (SNGFR) 
 	\item Add various frequency and amplitude oscillations a certain solute concentration
 	\item Add oscillations on solute concentration and SNGFR simultaneously
 \end{itemize}
 And we found several interesting results and tried to explain them by physiological knowledge.
 
-\subsection{Experiment 1}
-We increase glucose and urea concentration in lumen boundary condition separately. The proximal tubule plays an important role in reabsorption. Glucose are transported through transporter SGLT2 between lumen and cell,through transporter GLUT2 between cell and bath. Urea is a kind of inorganic chemicals with small molecule. It is transported by diffusion. Glucose and urea are both chemicals with no valence, meanwhile their concentrations are close in lumen. We calculate the convergence process to exam their difference in reabsorption. Since the transporter will accelerate the process
+\subsection{Recover Time}
+We increase glucose and urea concentration in lumen boundary condition separately. The proximal tubule plays an important role in re-absorption. Glucose are transported through transporter SGLT2 between lumen and cell,through transporter GLUT2 between cell and bath. Urea is a kind of inorganic chemicals with small molecule. It is transported by diffusion. Glucose and urea are both chemicals with no valence, meanwhile their concentrations are close in lumen. We calculate the convergence process to exam their difference in re-absorption. The transporter will accelerate the re-absorption process, thus we expect that the former experiment will reach the balance more quickly. Since we assume that lumen is incompressible, thus lumen concentrations will react to the sudden change almost simultaneously. Thus we observe cellular concentrations to judge the convergence. We find in both experiments the tubule will recover to steady state in 10-15 seconds. Moreover, if we increase other kind of solutes in similar scales, they can all reach the balance in 20 seconds. It indicates that the proximal tubule have the ability of reacting to the changes in boundary conditions quickly and keeping the lumen environment in steady state.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure1.png}
+\caption{Glucose concentration}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure2.png}
+\caption{Sodium concentration}
+\end{minipage}
+\end{figure}
+
+Figure 1 and Figure 2 is cellular glucose and sodium concentration trend after we increasing lumen boundary glucose concentration by 10 percents.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure3.png}
+\caption{urea concentration}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure4.png}
+\caption{Potassium concentration}
+\end{minipage}
+\end{figure}
+Figure 3 and Figure 4 is urea glucose and potassium concentration trend after we increasing lumen boundary urea concentration by 10 percents.
+
+\subsection{Oscillation on SNGFR}
+Experiments show that SNGFR has an oscillation of about 30 seconds time period. We include this oscillations in our numerical experiments to exam whether the oscillations will affect the tubule re-absorption function. We add oscillations as following form:
+\begin{equation}
+\mathrm{SNGFR}(t)=\mathrm{SNGFR}^{0}*(1+Asin(\frac{2\pi t}{T} ))
+\end{equation}
+where $SNGFR^{0}$ means original SNGFR baseline, A and T denote amplitude and time period separately. We choose T as 15, 30 or 60, A as 0.1, 0.3 or 0.5 in the experiment.
+
+
+
 
 
 \section{Numerical Experiment}
