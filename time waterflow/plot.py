@@ -939,10 +939,10 @@ for s in range(15):
         frac[i]=(1-cell[200][i]/cell[0][i])*100
     plt.figure()
     plt.plot(frac, label="reabsorb frac")
-    plt.title('lumen' + solute[s] + ' reabsorb frac')
+    plt.title(solute[s] + ' reabsorb frac')
     plt.legend(loc="upper left")
-    plt.xlabel("time")
-    plt.ylabel("percent")
+    plt.xlabel("time(s)")
+    plt.ylabel("percent(%)")
     plt.savefig('plot figure\lumen reabsorb frac\whole tubal\lumen frac of ' + solute[s] )
     plt.show()
 
@@ -961,6 +961,32 @@ plt.xlabel("time")
 plt.ylabel("percent")
 plt.savefig('plot figure\lumen reabsorb frac\whole tubal\lumen frac of water' )
 plt.show()
+
+file1 = 'malePT_waterflow_in_lumen.txt'
+file2 = 'malePT_con_of_urea_in_lumen.txt'
+cell = np.zeros(N * Ncell).reshape(Ncell, N)
+cell1=np.loadtxt(file1)
+cell2 = np.loadtxt(file2)
+for i in range(Ncell):
+    for j in range(N):
+        cell[i][j] = cell1[i][j]*cell2[i][j]
+frac1=np.zeros(N)
+frac2=np.zeros(N)
+for i in range(N):
+    frac1[i]=(1-cell[200][i]/cell[0][i])*100
+for i in range(N):
+    frac2[i]=(1-cell1[200][i]/cell1[0][i])*100
+plt.figure()
+plt.plot(frac1, label=" urea reabsorb frac")
+plt.plot(frac2, label=" water reabsorb frac")
+plt.title('urea and water reabsorb frac')
+plt.legend(loc="upper right")
+plt.xlabel("time(s)")
+plt.ylabel("percent(%)")
+plt.savefig('plot figure\lumen reabsorb frac\whole tubal\lumen frac of urea and water' )
+plt.show()
+
+
 ###########################peak and bottom frac along the tubal
 for s in range(15):
     file1 = 'malePT_waterflow_in_lumen.txt'
