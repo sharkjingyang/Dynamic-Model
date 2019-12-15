@@ -22,11 +22,11 @@ We developed a dynamic model of a male rat proximal tubule in order to investiga
 
 
 \section{Model Formulation}
-In proximal tubule, cells and tight junctions between cells form a single-layer cell wall between lumen and bath. We build our model based on the steady state model that Anita Layton published. The model consider fifteen kinds of solutes, including $\rm {Na}^{+}$,$\rm {K}^{+}$,$\rm {Cl}^{-}$,$\rm {HCO}_{3}^{-}$,$\rm H_{2}CO_{3}$,$\rm CO_{2}$,$\rm HPO_{4}^{2-}$,$\rm H_{2}PO_{4}^{-}$,urea,$\rm NH_{3}$,$\rm NH_{4}^{+}$,$\rm H^{+}$,\\$\rm HCO_{2}^{-}$,$\rm H_{2}CO_2$ and glucose. Model contains four compartments (Lumen, cell, lateral space, bath).Solutes are exchanged between different compartments through diffusion, transporters and coupled transporters. System equations are based on mass conservation and electronic neutrality. 
+In proximal tubule, cells and tight junctions between cells form a single-layer cell wall between lumen and bath. We build our model based on the steady state model that Anita Layton published\citep{layton2014mathematical}. The model consider fifteen kinds of solutes, including $\rm {Na}^{+}$,$\rm {K}^{+}$,$\rm {Cl}^{-}$,$\rm {HCO}_{3}^{-}$,$\rm H_{2}CO_{3}$,$\rm CO_{2}$,$\rm HPO_{4}^{2-}$,$\rm H_{2}PO_{4}^{-}$,urea,$\rm NH_{3}$,$\rm NH_{4}^{+}$,$\rm H^{+}$,\\$\rm HCO_{2}^{-}$,$\rm H_{2}CO_2$ and glucose. Model contains four compartments (Lumen, cell, lateral space, bath).Solutes are exchanged between different compartments through diffusion, transporters and coupled transporters. System equations are based on mass conservation and electronic neutrality. 
 
 
 \subsection{Water Conservation}
-Water conservation in cell and lateral space (denoted by subscripts ``C'' and ``P'' respectively) is given by:\\
+Water conservation in cell and lateral space (denoted by subscripts ``C'' and ``P'' respectively) is given by\citep{edwards2017cell}:\\
 \begin{equation}
 \frac{\mathrm{d} V_{\mathrm{C}}}{\mathrm{d} t}=J_{v, \mathrm{LC}}+J_{v, \mathrm{BC}}+J_{v, \mathrm{PC}}
 \end{equation}
@@ -73,7 +73,7 @@ The conservation of hydrogen is given by:
 \end{aligned}
 \end{equation}
 
-\subsection{Calculation}
+\section{Calculation}
 We discrete time-dependent term by Back-Euler Method. For the partial differential term, we simply regard $F_{v}$ does not change too much along one cell's length along the tubule. For instance, solute conservation equation in lumen can be discrete as following:
 For non-reacting solute $k$, conservation equations are given by:
 \begin{equation}
@@ -81,7 +81,7 @@ For non-reacting solute $k$, conservation equations are given by:
 \end{equation}
 where ${\Delta t}$ means time step length, superscript $n$ means the n-th time step.
 
-\section{Numerical Experiment}
+\section{Discovery}
 After finishing the building of dynamic model, we can do various numerical experiments to observe changes along the time. In general, we did four kinds of experiments on boundary conditions separately :
 \begin{itemize}
 	\item Increase a certain solute concentration level
@@ -108,7 +108,7 @@ We increase glucose and urea concentration in lumen boundary condition separatel
 \end{minipage}
 \end{figure}
 
-Figure 1 and Figure 2 is cellular glucose and sodium concentration trend after we increasing lumen boundary glucose concentration by 10 percents.
+Figure 1 and Figure 2 is cellular glucose and sodium concentration trend after we increasing lumen boundary glucose concentration by 10\%.
 
 \begin{figure}[H]
 \centering
@@ -123,7 +123,7 @@ Figure 1 and Figure 2 is cellular glucose and sodium concentration trend after w
 \caption{Potassium concentration}
 \end{minipage}
 \end{figure}
-Figure 3 and Figure 4 is urea glucose and potassium concentration trend after we increasing lumen boundary urea concentration by 10 percents.
+Figure 3 and Figure 4 is urea glucose and potassium concentration trend after we increasing lumen boundary urea concentration by 10\%.
 
 \subsection{Oscillation on SNGFR}
 Experiments show that SNGFR has an oscillation of about 30 seconds time period. We include this oscillations in our numerical experiments to exam whether the oscillations will affect the tubule re-absorption function. We add oscillations as following form:
@@ -160,9 +160,100 @@ where $SNGFR^{0}$ means original SNGFR baseline, A and T denote amplitude and ti
 \end{minipage}
 \end{figure}
 
+We observe urea re-absorption fraction instead of glucose since the fraction of glucose is over 99.7\%, oscillations are too small to be noticed. Figure 5-8 are urea and water re-absorption fraction with respect to time in different T and A. We find that though we add up to 50\% oscillation on SNGFR, the re-absorption of water and urea oscillate no more than 5\%, which suggests that proximal tubule re-absorption function keeps in a respectively stable state with the change of SNGFR. And we also notice the sudden drop in the fraction patterns of urea when oscillations over 30\% of the baseline. We observe similar pattern of dropping in T=30 and 60, suggesting it can not be attributed to not having enough time to transport solute when SNGFR is high. The dropping can be explained by that the re-absorption ability of urea reaches maximum when SNGFR over 1.3 times of baseline. 
 
-\section{Numerical Experiment}
-``I always thought something was fundamentally wrong with the universe'' \citep{adams1995hitchhiker}
+\subsection{Damping}
+Proximal tubule plays an important role in damping, which guarantees a stable environment for nephron to work. We add an oscillation to a particular kind of solute to verify it. We oscillate NaCl concentration in boundary condition as following form:
+\begin{equation}
+\mathrm{C_{NaCl}}(t)=\mathrm{C_{NaCl}}^{0}+A*sin(\frac{2\pi t}{T})
+\end{equation} 
+where we choose A as 20 mM, T as 30 seconds.
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure9.png}
+\caption{$Na^{+}$ concentration}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure10.png}
+\caption{$Cl^{-}$ concentration}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure11.png}
+\caption{Water flow oscillation}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure12.png}
+\caption{$Na^{+}$ flow oscillation}
+\end{minipage}
+\end{figure}
+From Figure 9 and 10 we can see the obvious damping on the concentration of $Na^{+}$ and $Cl^{-}$. Figure 12 also verify it by plotting the solute flow in lumen. Figure 11 is water flow in lumen. At the beginning of the tubule, the amplitude of water flow oscillation will increase due to the oscillation of $NaCl$ concentration. The amplitude decreases later on. Such damping can be also found when we add oscillation on boundary water flow separately.
+
+\subsection{Phase Difference}
+When we add on oscillation on $NaCl$ concentration as following form:
+\begin{equation}
+\mathrm{C_{NaCl}}(t)=\mathrm{C_{NaCl}}^{0}+20*sin(\frac{2\pi t}{30})
+\end{equation} 
+we found a phase difference in lumen potassium concentration. Such difference can be also observed in other solutes more or less.
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure13.png}
+\caption{$K^{+}$ phase difference}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure14.png}
+\caption{Urea phase difference}
+\end{minipage}
+\end{figure}
+It can be explained by that the concentrations of all solutes are not monotonous along the tubule. And if we change the concentration of NaCl, different part of tubule will behave differently on the trend of concentration changes. Figure 15 and 16 show lumen and cellular potassium concentration trend along the tubule for the few seconds.
+\begin{equation}
+\mathrm{C_{NaCl}}(t)=\mathrm{C_{NaCl}}^{0}+20*sin(\frac{2\pi t}{30})
+\end{equation} 
+we found a phase difference in lumen potassium concentration. Such difference can be also observed in other solutes more or less.
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure15.png}
+\caption{Lumen $K^{+}$}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure16.png}
+\caption{Cellular $K^{+}$}
+\end{minipage}
+\end{figure}
+
+And the transportation of potassium is completed by diffusion, channels and transporters, which is most decided by potential difference and concentration difference. The different changing trend will account for different potassium net flux in lumen (Figure 17 and 18). From the plotting we can conclude some parts of the tubule transports solute (potassium or urea) from lumen to cell while others are opposite, which results in the phase difference.
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure17.png}
+\caption{Lumen $K^{+}$ net flux}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=6cm]{figure/figure18.png}
+\caption{Lumen urea net flux}
+\end{minipage}
+\end{figure}
+Such phase difference can be observed in all kind of solutes and cellular volume. Similar explanation can be applied.
+
+\section{Discussion}
+Since the dynamic data is quite hard to measure, we can not compare our numerical experiment with reality. A relatively stable environment is quite important for proximal tubule to play its functions. We show that proximal tubule react quickly to the changes and have the ability of damping the oscillations. That suggests the proximal tubule have a negative feedback mechanism to adjust solute concentrations, which plays an important role in concentration adjustment.
+
 
 \bibliographystyle{plain}
 \bibliography{references}

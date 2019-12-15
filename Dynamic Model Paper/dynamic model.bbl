@@ -1,8 +1,13 @@
 \begin{thebibliography}{1}
 
-\bibitem{adams1995hitchhiker}
-D.~Adams.
-\newblock {\em The Hitchhiker's Guide to the Galaxy}.
-\newblock San Val, 1995.
+\bibitem{edwards2017cell}
+Aur{\'e}lie Edwards and Anita~T Layton.
+\newblock Cell volume regulation in the proximal tubule of rat kidney.
+\newblock {\em Bulletin of mathematical biology}, 79(11):2512--2533, 2017.
+
+\bibitem{layton2014mathematical}
+Anita~T Layton and Aur{\'e}lie Edwards.
+\newblock {\em Mathematical Modeling in Renal Physiology}.
+\newblock Springer, 2014.
 
 \end{thebibliography}
