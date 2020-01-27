@@ -17,7 +17,7 @@ for s in range(15):
     plt.title('cellular ' + solute[s] + ' concentration')
     plt.legend(loc="upper right")
     plt.xlabel("time(s)")
-    plt.ylabel("concentration(nM)")
+    plt.ylabel("concentration(mM)")
     plt.savefig('plot figure\cellular concentration\conc of ' + solute[s] + ' in cell')
     plt.show()
 
